@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    # ego
+    ego_nearest_dist_threshold: 0.5 # [m]
+    ego_nearest_yaw_threshold: 2.092 # [rad] = 120 [deg]

@@ -1,0 +1,9 @@
+/**:
+  ros__parameters:
+    delimiter: ";"
+    is_header: true
+    yaw_offset: 1.57079632679
+    col_x: 1
+    col_y: 2
+    col_yaw: 3
+    col_vel: 5
