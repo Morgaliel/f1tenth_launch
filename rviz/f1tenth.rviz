@@ -3,9 +3,10 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded: ~
+      Expanded:
+        - /Planning1
       Splitter Ratio: 0.557669460773468
-    Tree Height: 274
+    Tree Height: 259
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -13,7 +14,8 @@ Panels:
     Name: Tool Properties
     Splitter Ratio: 0.5886790156364441
   - Class: rviz_common/Views
-    Expanded: ~
+    Expanded:
+      - /Current View1
     Name: Views
     Splitter Ratio: 0.5
   - Class: AutowareDateTimePanel
@@ -35,7 +37,8 @@ Visualization Manager:
           Show Arrows: true
           Show Axes: true
           Show Names: true
-          Tree: {}
+          Tree:
+            {}
           Update Interval: 0
           Value: false
         - Alpha: 0.5
@@ -60,9 +63,12 @@ Visualization Manager:
           Displays:
             - Class: rviz_plugins/SteeringAngle
               Enabled: true
+              Left: 64
+              Length: 128
               Name: SteeringAngle
               Scale: 17
               Text Color: 25; 255; 240
+              Top: 64
               Topic:
                 Depth: 5
                 Durability Policy: Volatile
@@ -70,12 +76,15 @@ Visualization Manager:
                 Reliability Policy: Reliable
                 Value: /vehicle/status/steering_status
               Value: true
+              Value Scale: 0.14999249577522278
               Value height offset: 0
             - Class: rviz_plugins/ConsoleMeter
               Enabled: true
+              Left: 256
+              Length: 128
               Name: ConsoleMeter
-              Scale: 3
               Text Color: 25; 255; 240
+              Top: 64
               Topic:
                 Depth: 5
                 Durability Policy: Volatile
@@ -83,17 +92,28 @@ Visualization Manager:
                 Reliability Policy: Reliable
                 Value: /vehicle/status/velocity_status
               Value: true
+              Value Scale: 0.14999249577522278
               Value height offset: 0
             - Class: rviz_plugins/AccelerationMeter
+              Emergency Color: 255; 80; 80
               Enabled: false
+              Left: 448
+              Length: 128
+              Max Emergency Threshold: 1
+              Min Emergency Threshold: -2.5
               Name: AccelerationMeter
+              Text Color: 25; 255; 240
+              Top: 64
               Topic:
                 Depth: 5
                 Durability Policy: Volatile
                 History Policy: Keep Last
                 Reliability Policy: Reliable
                 Value: /localization/acceleration
-            - Alpha: 0.999
+              Value: false
+              Value Scale: 0.14999249577522278
+              Value height offset: 0
+            - Alpha: 0.9990000128746033
               Class: rviz_plugins/VelocityHistory
               Color Border Vel Max: 3
               Constant Color:
@@ -110,7 +130,7 @@ Visualization Manager:
                 Reliability Policy: Reliable
                 Value: /vehicle/status/velocity_status
               Value: true
-            - Alpha: 1.0
+            - Alpha: 1
               Class: rviz_default_plugins/RobotModel
               Collision Enabled: false
               Description File: ""
@@ -122,6 +142,40 @@ Visualization Manager:
                 Reliability Policy: Reliable
                 Value: /robot_description
               Enabled: true
+              Links:
+                All Links Enabled: true
+                Expand Joint Details: false
+                Expand Link Details: false
+                Expand Tree: false
+                Link Tree Style: Links in Alphabetic Order
+                base_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                  Value: true
+                camera_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                camera_optical_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                laser:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                sensor_kit_base_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+                vesc/imu_link:
+                  Alpha: 1
+                  Show Axes: false
+                  Show Trail: false
+              Mass Properties:
+                Inertia: false
+                Mass: false
               Name: VehicleModel
               TF Prefix: ""
               Update Interval: 0
@@ -143,15 +197,14 @@ Visualization Manager:
               Wave Velocity: 40
             - Class: rviz_plugins/MaxVelocity
               Enabled: true
+              Left: 298
+              Length: 48
               Name: MaxVelocity
               Text Color: 255; 255; 255
-              Topic:
-                Depth: 5
-                Durability Policy: Volatile
-                History Policy: Keep Last
-                Reliability Policy: Reliable
-                Value: /planning/scenario_planning/current_max_velocity
+              Top: 140
+              Topic: /planning/scenario_planning/current_max_velocity
               Value: true
+              Value Scale: 0.25
           Enabled: true
           Name: Vehicle
       Enabled: true
@@ -179,15 +232,15 @@ Visualization Manager:
             Value: /map_updates
           Use Timestamp: false
           Value: true
-      Enabled: true
+      Enabled: false
       Name: Map
     - Class: rviz_common/Group
       Displays:
         - Alpha: 1
           Autocompute Intensity Bounds: true
           Autocompute Value Bounds:
-            Max Value: 0.1624000072479248
-            Min Value: 0.1624000072479248
+            Max Value: 0.10740000009536743
+            Min Value: 0.10740000009536743
             Value: true
           Axis: Z
           Channel Name: intensity
@@ -239,14 +292,15 @@ Visualization Manager:
           Class: rviz_plugins::PoseHistory
           Enabled: true
           Line:
+            Alpha: 0.9990000128746033
             Color: 0; 255; 255
             Value: true
             Width: 0.10000000149011612
-            Alpha: 0.999
           Name: PoseHistory
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /localization/cartographer/pose
@@ -262,19 +316,40 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /planning/racing_planner/trajectory
           Value: true
+          View Footprint:
+            Alpha: 1
+            Color: 230; 230; 50
+            Offset from BaseLink: 0
+            Rear Overhang: 0.10999999940395355
+            Value: false
+            Vehicle Length: 0.5479999780654907
+            Vehicle Width: 0.29579201340675354
           View Path:
             Alpha: 0.5
             Color: 0; 0; 0
             Constant Color: false
-            Value: true
             Constant Width: true
+            Value: true
             Width: 0.30000001192092896
+          View Point:
+            Alpha: 1
+            Color: 0; 60; 255
+            Offset: 0
+            Radius: 0.10000000149011612
+            Value: false
+          View Text Slope:
+            Scale: 0.30000001192092896
+            Value: false
+          View Text Velocity:
+            Scale: 0.30000001192092896
+            Value: false
           View Velocity:
-            Alpha: 0.999
+            Alpha: 0.9990000128746033
             Color: 0; 0; 0
             Constant Color: false
             Scale: 0.30000001192092896
@@ -290,17 +365,38 @@ Visualization Manager:
           Topic:
             Depth: 5
             Durability Policy: Volatile
+            Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /control/trajectory_follower/lateral/predicted_trajectory
           Value: true
+          View Footprint:
+            Alpha: 1
+            Color: 230; 230; 50
+            Offset from BaseLink: 0
+            Rear Overhang: 0.10999999940395355
+            Value: false
+            Vehicle Length: 0.5479999780654907
+            Vehicle Width: 0.29579201340675354
           View Path:
             Alpha: 1
             Color: 255; 255; 255
             Constant Color: false
-            Value: true
             Constant Width: true
+            Value: true
             Width: 0.10000000149011612
+          View Point:
+            Alpha: 1
+            Color: 0; 60; 255
+            Offset: 0
+            Radius: 0.10000000149011612
+            Value: false
+          View Text Slope:
+            Scale: 0.30000001192092896
+            Value: false
+          View Text Velocity:
+            Scale: 0.30000001192092896
+            Value: false
           View Velocity:
             Alpha: 1
             Color: 0; 0; 0
@@ -310,7 +406,8 @@ Visualization Manager:
         - Class: rviz_default_plugins/MarkerArray
           Enabled: false
           Name: Debug/MPC
-          Namespaces: {}
+          Namespaces:
+            {}
           Topic:
             Depth: 5
             Durability Policy: Volatile
@@ -321,7 +418,8 @@ Visualization Manager:
         - Class: rviz_default_plugins/MarkerArray
           Enabled: false
           Name: Debug/PurePursuit
-          Namespaces: {}
+          Namespaces:
+            {}
           Topic:
             Depth: 5
             Durability Policy: Volatile
@@ -331,10 +429,142 @@ Visualization Manager:
           Value: false
       Enabled: true
       Name: Control
+    - Alpha: 1
+      Class: rviz_default_plugins/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 15
+      Name: PointStamped
+      Radius: 0.20000000298023224
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /obstacle_point
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Marker
+      Namespaces:
+        nodes: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /tree_nodes
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Marker
+      Namespaces:
+        branch: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /tree_branches
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Marker
+      Namespaces:
+        path: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /path_found
+      Value: true
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: Marker
+      Namespaces:
+        goal: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /goal
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz_default_plugins/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updated
+      Update Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /map_updated_updates
+      Use Timestamp: false
+      Value: true
+    - Class: rviz_plugins/Trajectory
+      Color Border Vel Max: 3
+      Enabled: true
+      Name: RacingTrajectory
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /planning/racing_planner/avoidance/trajectory
+      Value: true
+      View Footprint:
+        Alpha: 1
+        Color: 230; 230; 50
+        Offset from BaseLink: 0
+        Rear Overhang: 0.10999999940395355
+        Value: false
+        Vehicle Length: 0.5479999780654907
+        Vehicle Width: 0.29579201340675354
+      View Path:
+        Alpha: 0.5
+        Color: 0; 0; 0
+        Constant Color: false
+        Constant Width: true
+        Value: true
+        Width: 0.30000001192092896
+      View Point:
+        Alpha: 1
+        Color: 0; 60; 255
+        Offset: 0
+        Radius: 0.10000000149011612
+        Value: false
+      View Text Slope:
+        Scale: 0.30000001192092896
+        Value: false
+      View Text Velocity:
+        Scale: 0.30000001192092896
+        Value: false
+      View Velocity:
+        Alpha: 0.9990000128746033
+        Color: 0; 0; 0
+        Constant Color: false
+        Scale: 0.30000001192092896
+        Value: true
   Enabled: true
   Global Options:
     Background Color: 10; 10; 10
-    Default Light: true
     Fixed Frame: map
     Frame Rate: 30
   Name: root
@@ -347,15 +577,15 @@ Visualization Manager:
     - Class: rviz_default_plugins/Measure
       Line color: 128; 128; 0
     - Class: rviz_default_plugins/SetInitialPose
-      Theta std deviation: 0.2617993950843811
+      Covariance x: 0.25
+      Covariance y: 0.25
+      Covariance yaw: 0.06853891909122467
       Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /initialpose
-      X std deviation: 0.5
-      Y std deviation: 0.5
     - Class: rviz_default_plugins/SetGoal
       Topic:
         Depth: 5
@@ -363,6 +593,9 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /planning/mission_planning/goal
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
   Value: true
   Views:
     Current:
@@ -376,11 +609,11 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Scale: 30
+      Scale: 51.341678619384766
       Target Frame: map
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 0
-      Y: 0
+      X: 5.968156814575195
+      Y: 1.1428710222244263
     Saved:
       - Class: rviz_default_plugins/ThirdPersonFollower
         Distance: 18
@@ -424,18 +657,18 @@ Window Geometry:
     collapsed: false
   Displays:
     collapsed: false
-  Height: 1043
+  Height: 1016
   Hide Left Dock: false
   Hide Right Dock: true
   Image:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd0000000400000000000001ad000003bdfc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b0000014d000000c700fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c010000018e0000015e0000015e00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000000a0049006d00610067006501000002f2000001060000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000068f000000de0000000000000000fb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000068f000000de0000000000000000fb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d006100670065010000039c000001600000000000000000000000010000015f000003bdfc0200000005fb0000000a00560069006500770073000000003b000002ae000000a000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007300000002ef000000c40000005c00fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c00000003b90000003f0000003f00fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d00650100000000000004500000000000000000000005cd000003bd00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000400000000000001ad000003a2fc020000000dfb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005c00fffffffb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000003b0000013e000000c700fffffffb00000024004100750074006f00770061007200650053007400610074006500500061006e0065006c010000017f0000015e0000015e00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d0065007200610100000682000000eb0000000000000000fb0000000a0049006d00610067006501000002e3000000fa0000002800fffffffb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000068f000000de0000000000000000fb0000002c0049006e0069007400690061006c0050006f007300650042007500740074006f006e00500061006e0065006c000000068f000000de0000000000000000fb00000030005200650063006f0067006e006900740069006f006e0052006500730075006c0074004f006e0049006d006100670065010000039c000001600000000000000000000000010000015f000003bdfc0200000005fb0000000a00560069006500770073000000003b000002ae000000a000fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007300000002ef000000c40000005c00fffffffb0000002a004100750074006f0077006100720065004400610074006500540069006d006500500061006e0065006c00000003b90000003f0000003f00fffffffb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000e7a0000005afc0100000001fb0000000a00560069006500770073030000004e00000080000002e1000001970000000300000e7a0000005afc0100000002fb0000000800540069006d0065010000000000000e7a0000000000000000fb0000000800540069006d0065010000000000000450000000000000000000000587000003a200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Tool Properties:
     collapsed: true
   Views:
     collapsed: true
-  Width: 1920
-  X: 1920
-  Y: 0
+  Width: 1850
+  X: 70
+  Y: 27

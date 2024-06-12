@@ -51,8 +51,20 @@ def launch_setup(context, *args, **kwargs):
         )
     ])
 
+    obstacle_avoidance_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            launch_file_path=PathJoinSubstitution(
+                [FindPackageShare('obstacle_avoidance'), 'launch', 'obstacle_avoidance.launch.py']
+            )
+        ),
+        launch_arguments={
+            'csv_path': trajectory_csv_path
+        }.items(),
+    )
+
     return [
         trajectory_loader_launch,
+        obstacle_avoidance_launch
     ]
 
 
