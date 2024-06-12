@@ -3,8 +3,7 @@ Panels:
     Help Height: 0
     Name: Displays
     Property Tree Widget:
-      Expanded:
-        - /Planning1
+      Expanded: ~
       Splitter Ratio: 0.557669460773468
     Tree Height: 259
   - Class: rviz_common/Selection
@@ -471,10 +470,10 @@ Visualization Manager:
         Value: /tree_branches
       Value: true
     - Class: rviz_default_plugins/Marker
-      Enabled: true
+      Enabled: false
       Name: Marker
       Namespaces:
-        path: true
+        {}
       Topic:
         Depth: 5
         Durability Policy: Volatile
@@ -482,7 +481,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /path_found
-      Value: true
+      Value: false
     - Class: rviz_default_plugins/Marker
       Enabled: true
       Name: Marker
@@ -519,7 +518,7 @@ Visualization Manager:
       Value: true
     - Class: rviz_plugins/Trajectory
       Color Border Vel Max: 3
-      Enabled: true
+      Enabled: false
       Name: RacingTrajectory
       Topic:
         Depth: 5
@@ -528,7 +527,7 @@ Visualization Manager:
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /planning/racing_planner/avoidance/trajectory
-      Value: true
+      Value: false
       View Footprint:
         Alpha: 1
         Color: 230; 230; 50
@@ -612,8 +611,8 @@ Visualization Manager:
       Scale: 51.341678619384766
       Target Frame: map
       Value: TopDownOrtho (rviz_default_plugins)
-      X: 5.968156814575195
-      Y: 1.1428710222244263
+      X: 5.6370415687561035
+      Y: 2.8179240226745605
     Saved:
       - Class: rviz_default_plugins/ThirdPersonFollower
         Distance: 18
